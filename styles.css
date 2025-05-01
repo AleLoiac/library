@@ -24,3 +24,8 @@ textarea {
 	line-height: 1.15;
 	margin: 0;
 }
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
