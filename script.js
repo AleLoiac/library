@@ -38,9 +38,17 @@ function displayBook(book) {
     container.appendChild(bookDiv);
 }
 
+function displayLibrary() {
+    library.forEach((book) => {
+        displayBook(book);
+    });
+};
+
 addBookToLibrary("1984", "George Orwell", 328, true);
 addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, false);
 addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 180, true);
 addBookToLibrary("The Catcher in the Rye", "J.D. Salinger", 214, false);
 addBookToLibrary("Brave New World", "Aldous Huxley", 268, true);
 addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 310, true);
+
+displayLibrary();
