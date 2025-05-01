@@ -28,4 +28,12 @@ textarea {
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 20px;
+}
+
+.book {
+    border-radius: 15px;
+    box-shadow: 2px 2px 3px lightslategrey;
+    padding: 10px;
 }
