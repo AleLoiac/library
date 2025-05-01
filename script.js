@@ -1,6 +1,8 @@
 const container = document.querySelector(".container");
 const addBookBtn = document.querySelector(".new-book");
 const dialog = document.querySelector("#book-form");
+const confirmBtn = document.querySelector("#confirmBtn");
+const cancelBtn = document.querySelector("#cancelBtn");
 
 const library = [];
 
@@ -58,4 +60,27 @@ displayLibrary();
 
 addBookBtn.addEventListener("click", () => {
     dialog.showModal();
+})
+
+cancelBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    dialog.close();
+})
+
+confirmBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const title = document.querySelector("#title").value;
+    const author = document.querySelector("#author").value;
+    const pages = document.querySelector("#pages").value;
+    const read = document.querySelector("#read");
+
+    // display error if required fields are empty;
+
+    const isRead = read.checked;
+
+    addBookToLibrary(title, author, pages, isRead);
+    displayLibrary();
+
+    dialog.close();
 })
