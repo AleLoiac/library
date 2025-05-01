@@ -36,6 +36,11 @@ textarea {
     border-radius: 15px;
     box-shadow: 2px 2px 3px lightslategrey;
     padding: 10px;
+    background-color: rgb(219, 255, 255);
+}
+
+.book:hover {
+    background-color: rgb(157, 255, 234);
 }
 
 .center {
@@ -48,7 +53,7 @@ textarea {
     border-radius: 30px;
     padding: 5px 30px;
     border-style: none;
-    background-color:darkturquoise;
+    background-color:rgb(78, 216, 186);
     font-size: 1.5rem;
     font-weight: bold;
 }
