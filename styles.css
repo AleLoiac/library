@@ -37,3 +37,26 @@ textarea {
     box-shadow: 2px 2px 3px lightslategrey;
     padding: 10px;
 }
+
+.center {
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}
+
+.new-book {
+    border-radius: 30px;
+    padding: 5px 30px;
+    border-style: none;
+    background-color:darkturquoise;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.new-book:hover {
+    outline: 2px solid rgb(0, 140, 255);
+}
+
+.new-book:active {
+    box-shadow: inset -2px 2px 2px 1px rgb(0, 117, 119);
+}
