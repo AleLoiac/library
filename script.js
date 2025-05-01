@@ -1,4 +1,6 @@
 const container = document.querySelector(".container");
+const addBookBtn = document.querySelector(".new-book");
+const dialog = document.querySelector("#book-form");
 
 const library = [];
 
@@ -6,7 +8,7 @@ function Book(name, author, pages, read) {
     if (!new.target) {
         throw Error("Use 'new' to create an instance!")
     }
-    this.id = crypto.randomUUID;
+    this.id = crypto.randomUUID();
     this.name = name;
     this.author = author;
     this.pages = pages;
@@ -39,6 +41,7 @@ function displayBook(book) {
 }
 
 function displayLibrary() {
+    container.innerHTML = "";
     library.forEach((book) => {
         displayBook(book);
     });
@@ -52,3 +55,7 @@ addBookToLibrary("Brave New World", "Aldous Huxley", 268, true);
 addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 310, true);
 
 displayLibrary();
+
+addBookBtn.addEventListener("click", () => {
+    dialog.showModal();
+})
