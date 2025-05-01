@@ -1,3 +1,5 @@
+const container = document.querySelector(".container");
+
 const library = [];
 
 function Book(name, author, pages, read) {
@@ -14,6 +16,26 @@ function Book(name, author, pages, read) {
 function addBookToLibrary(name, author, pages, read) {
     const book = new Book(name, author, pages, read);
     library.push(book);
+}
+
+function displayBook(book) {
+    const bookDiv = document.createElement("div");
+    bookDiv.classList.add("book");
+    bookDiv.style.border = "1px solid grey";
+    
+    const name = document.createElement("h3");
+    name.textContent = book.name;
+    bookDiv.appendChild(name);
+
+    const author = document.createElement("h4");
+    author.textContent = "By" + book.author;
+    bookDiv.appendChild(author);
+
+    const pages = document.createElement("p");
+    pages.textContent = "Number of pages:" + book.pages;
+    bookDiv.appendChild(pages);
+
+    container.appendChild(bookDiv);
 }
 
 addBookToLibrary("1984", "George Orwell", 328, true);
