@@ -28,11 +28,11 @@ function displayBook(book) {
     bookDiv.appendChild(name);
 
     const author = document.createElement("h4");
-    author.textContent = "By" + book.author;
+    author.textContent = book.author;
     bookDiv.appendChild(author);
 
     const pages = document.createElement("p");
-    pages.textContent = "Number of pages:" + book.pages;
+    pages.textContent = "Number of pages: " + book.pages;
     bookDiv.appendChild(pages);
 
     container.appendChild(bookDiv);
