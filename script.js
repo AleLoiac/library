@@ -1,7 +1,7 @@
 const container = document.querySelector(".container");
 const addBookBtn = document.querySelector(".new-book");
+const form = document.querySelector("#form");
 const dialog = document.querySelector("#book-form");
-const confirmBtn = document.querySelector("#confirmBtn");
 const cancelBtn = document.querySelector("#cancelBtn");
 
 const library = [];
@@ -67,20 +67,19 @@ cancelBtn.addEventListener("click", (e) => {
     dialog.close();
 })
 
-confirmBtn.addEventListener("click", (e) => {
+form.addEventListener("submit", (e) => {
+    if (!form.checkValidity()) {
+        return;
+    }
+
     e.preventDefault();
 
     const title = document.querySelector("#title").value;
     const author = document.querySelector("#author").value;
     const pages = document.querySelector("#pages").value;
-    const read = document.querySelector("#read");
+    const read = document.querySelector("#read").checked;
 
-    // display error if required fields are empty;
-
-    const isRead = read.checked;
-
-    addBookToLibrary(title, author, pages, isRead);
+    addBookToLibrary(title, author, pages, read);
     displayLibrary();
-
     dialog.close();
 })
