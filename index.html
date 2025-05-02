@@ -9,7 +9,7 @@
 </head>
 <body>
     <dialog id="book-form">
-        <form method="POST">
+        <form id="form" method="POST">
             <div>
                 <h2>Add a book to the library</h2>
                 <div>
@@ -30,8 +30,8 @@
                 </div>
             </div>
             <div>
-                <button value="cancel" formmethod="dialog" id="cancelBtn">Cancel</button>
-                <button value="default" id="confirmBtn">Confirm</button>
+                <button id="cancelBtn">Cancel</button>
+                <button type="submit">Confirm</button>
             </div>
         </form>
     </dialog>
