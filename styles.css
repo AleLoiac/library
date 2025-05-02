@@ -43,6 +43,30 @@ textarea {
     background-color: rgb(157, 255, 234);
 }
 
+.book-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.remove-book {
+    align-self: center;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(253, 178, 155);
+    border-width: 1px;
+    flex-shrink: 0;
+}
+
+.remove-book:hover {
+    cursor: pointer;
+}
+
+.remove-book:active {
+    box-shadow: inset -1px 1px 1px 1px rgb(243, 128, 93);
+}
+
 .center {
     display: flex;
     justify-content: center;
@@ -59,6 +83,7 @@ textarea {
 }
 
 .new-book:hover {
+    cursor: pointer;
     outline: 2px solid rgb(0, 140, 255);
 }
 
