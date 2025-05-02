@@ -116,3 +116,25 @@ input[type="text"] {
 form > div > button {
     margin-top: 20px;
 }
+
+.read-section {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.toggle-read {
+    padding: 5px 20px;
+    border-radius: 15px;
+    background-color: rgb(78, 216, 186);
+    border: none;
+}
+
+.toggle-read:hover {
+    cursor: pointer;
+    outline: 1px solid rgb(0, 140, 255);
+}
+
+.toggle-read:active {
+    box-shadow: inset -2px 2px 2px 1px rgb(0, 117, 119);
+}
