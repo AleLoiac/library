@@ -140,7 +140,6 @@ container.addEventListener("click", (e) => {
         library.forEach((book) => {
             if (book.id === idToggle) {
                 book.toggleRead();
-                console.log(book);
             }
         })
         displayLibrary();
