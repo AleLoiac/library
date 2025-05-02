@@ -26,10 +26,19 @@ function displayBook(book) {
     const bookDiv = document.createElement("div");
     bookDiv.classList.add("book");
     bookDiv.style.border = "1px solid grey";
+
+    const bookHeader = document.createElement("div");
+    bookHeader.classList.add("book-header");
+    bookDiv.appendChild(bookHeader);
     
     const name = document.createElement("h3");
     name.textContent = book.name;
-    bookDiv.appendChild(name);
+    bookHeader.appendChild(name);
+
+    const removeBook = document.createElement("button");
+    removeBook.classList.add("remove-book");
+    removeBook.textContent = "✖";
+    bookHeader.appendChild(removeBook);
 
     const author = document.createElement("h4");
     author.textContent = book.author;
