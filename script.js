@@ -17,6 +17,10 @@ function Book(name, author, pages, read) {
     this.read = read;
 }
 
+Book.prototype.toggleRead = function () {
+    this.read = !this.read;
+}
+
 function addBookToLibrary(name, author, pages, read) {
     const book = new Book(name, author, pages, read);
     library.push(book);
@@ -48,6 +52,23 @@ function displayBook(book) {
     const pages = document.createElement("p");
     pages.textContent = "Number of pages: " + book.pages;
     bookDiv.appendChild(pages);
+
+    const readSection = document.createElement("div");
+    readSection.classList.add("read-section");
+    bookDiv.appendChild(readSection);
+
+    const toggleRead = document.createElement("button");
+    toggleRead.classList.add("toggle-read");
+    toggleRead.textContent = "Toggle";
+    readSection.appendChild(toggleRead);
+
+    const isRead = document.createElement("p");
+    if (!book.read) {
+        isRead.textContent = "Not read yet";
+    } else {
+        isRead.textContent = "Read";
+    }
+    readSection.appendChild(isRead);
 
     container.appendChild(bookDiv);
 }
