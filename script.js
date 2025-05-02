@@ -130,3 +130,19 @@ container.addEventListener("click", (e) => {
         displayLibrary();
     }
 })
+
+container.addEventListener("click", (e) => {
+    const target = e.target;
+
+    if (target.classList.value === "toggle-read") {
+        const idToggle = target.parentNode.parentNode.dataset.id;
+
+        library.forEach((book) => {
+            if (book.id === idToggle) {
+                book.toggleRead();
+                console.log(book);
+            }
+        })
+        displayLibrary();
+    }
+})
