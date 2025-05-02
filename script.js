@@ -25,6 +25,7 @@ function addBookToLibrary(name, author, pages, read) {
 function displayBook(book) {
     const bookDiv = document.createElement("div");
     bookDiv.classList.add("book");
+    bookDiv.setAttribute("data-id", book.id);
     bookDiv.style.border = "1px solid grey";
 
     const bookHeader = document.createElement("div");
@@ -91,4 +92,20 @@ form.addEventListener("submit", (e) => {
     addBookToLibrary(title, author, pages, read);
     displayLibrary();
     dialog.close();
+})
+
+container.addEventListener("click", (e) => {
+    const target = e.target;
+
+    if (target.classList.value === "remove-book") {
+        const idDeletion = target.parentNode.parentNode.dataset.id;
+
+        library.forEach((book) => {
+            if (book.id === idDeletion) {
+                const index = library.indexOf(book);
+                library.splice(index, 1);
+            }
+        })
+        displayLibrary();
+    }
 })
