@@ -6,19 +6,21 @@ const cancelBtn = document.querySelector("#cancelBtn");
 
 const library = [];
 
-function Book(name, author, pages, read) {
-    if (!new.target) {
-        throw Error("Use 'new' to create an instance!")
+class Book {
+    constructor(name, author, pages, read) {
+        if (!new.target) {
+            throw Error("Use 'new' to create an instance!")
+        }
+        this.id = crypto.randomUUID();
+        this.name = name;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
     }
-    this.id = crypto.randomUUID();
-    this.name = name;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
 
-Book.prototype.toggleRead = function () {
-    this.read = !this.read;
+    toggleRead() {
+        this.read = !this.read;
+    }
 }
 
 function addBookToLibrary(name, author, pages, read) {
